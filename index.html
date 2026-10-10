@@ -1,0 +1,1129 @@
+<title>Thisuli Ekanayaka</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&family=Mrs+Saint+Delafield&display=swap">
+
+<style>
+/* Burgundy and blush editorial. Deep wine scenes alternate with blush leaves,
+   every surface is frosted glass with an inner highlight edge and stacked
+   shadows, and the artwork is generated in the same palette as the page. */
+:root{
+  color-scheme: dark;
+
+  --plum:   #2A0E18;
+  --burg:   #3F1623;
+  --wine:   #5C2133;
+  --wine-2: #6E2A3E;
+  --mauve:  #A8727F;
+  --rose:   #D8A8A8;
+  --blush:  #F7DDD3;
+  --blush-2:#FBE9E1;
+  --ivory:  #FDF4EF;
+  --dust:   #DCC3C6;
+
+  --onlight:      #3A1622;
+  --onlight-soft: #7A5058;
+  --onlight-mute: #A6808A;
+  --ondark:       #FBECE5;
+  --ondark-soft:  rgba(251,236,229,.76);
+  --ondark-mute:  rgba(251,236,229,.5);
+
+  --glass:      rgba(255,255,255,.07);
+  --glass-2:    rgba(255,255,255,.11);
+  --glass-edge: rgba(255,255,255,.17);
+  --glass-lt-edge: rgba(255,255,255,.92);
+
+  --lift-1: 0 1px 2px rgba(42,14,24,.22), 0 6px 14px rgba(42,14,24,.18),
+            inset 0 1px 0 rgba(255,255,255,.15);
+  --lift-2: 0 2px 4px rgba(42,14,24,.24), 0 12px 28px rgba(42,14,24,.26),
+            0 34px 64px rgba(42,14,24,.24), inset 0 1px 0 rgba(255,255,255,.17);
+  --lift-3: 0 3px 8px rgba(42,14,24,.28), 0 20px 44px rgba(42,14,24,.32),
+            0 56px 100px rgba(42,14,24,.3), inset 0 1px 0 rgba(255,255,255,.21);
+  --lift-lt-1: 0 1px 2px rgba(92,33,51,.08), 0 6px 16px rgba(92,33,51,.09),
+               inset 0 1px 0 rgba(255,255,255,.92);
+  --lift-lt-2: 0 2px 5px rgba(92,33,51,.1), 0 14px 32px rgba(92,33,51,.13),
+               0 40px 72px rgba(92,33,51,.11), inset 0 1px 0 rgba(255,255,255,.95);
+
+  --display: "Playfair Display", "Times New Roman", serif;
+  --sans:    "Jost", "Helvetica Neue", Arial, sans-serif;
+  --script:  "Mrs Saint Delafield", "Segoe Script", cursive;
+
+  --s--1: clamp(.73rem,.71rem + .1vw,.8rem);
+  --s-0:  clamp(.96rem,.93rem + .16vw,1.04rem);
+  --s-1:  clamp(1.11rem,1.04rem + .36vw,1.33rem);
+  --s-2:  clamp(1.44rem,1.24rem + .9vw,2.02rem);
+  --s-3:  clamp(1.92rem,1.54rem + 1.85vw,3rem);
+  --s-4:  clamp(2.5rem,1.7rem + 4.2vw,4.9rem);
+
+  --maxw: 1200px;
+}
+
+*{ box-sizing:border-box }
+
+body{
+  margin:0; background:var(--plum); color:var(--ondark);
+  font-family:var(--sans); font-weight:300;
+  font-size:var(--s-0); line-height:1.72;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+.wrap{ width:100%; max-width:var(--maxw); margin-inline:auto; padding-inline:24px }
+a{ color:inherit } img{ display:block; max-width:100% } p{ margin:0 }
+:focus-visible{ outline:1.5px solid var(--rose); outline-offset:4px; border-radius:10px }
+
+h1,h2,h3{ font-family:var(--display); font-weight:500; margin:0; letter-spacing:-.016em; text-wrap:balance }
+h2{ font-size:var(--s-3); line-height:1.14 }
+h3{ font-size:var(--s-1); line-height:1.26 }
+
+section{ scroll-margin-top:78px }
+.scene{ position:relative; overflow:hidden }
+.pad{ padding-block:clamp(58px,7.6vw,106px) }
+
+.s-hero{ background:linear-gradient(162deg,#4A1B29 0%, #3A1322 46%, #26101A 100%) }
+.s-about{ background:linear-gradient(160deg,#FBE9E1 0%, #F7DDD3 52%, #F0D0C8 100%) }
+.s-exp{ background:linear-gradient(170deg,#2E111C 0%, #240D16 100%) }
+.s-work{ background:linear-gradient(170deg,#E7CFD3 0%, #DCC0C7 55%, #CFB0BA 100%) }
+.s-detail{ background:linear-gradient(175deg,#FBECE6, #F6DFD8 56%, #EFD2CD) }
+.s-services{ background:linear-gradient(155deg,#5C2133 0%, #431726 56%, #2C0F1A 100%) }
+.s-creds{ background:linear-gradient(170deg,#F7DDD3, #EACBC7) }
+.s-quote{ background:linear-gradient(120deg,#F8E2D8, #F2CFC6) }
+.s-contact{ background:linear-gradient(150deg,#3A1322 0%, #260E18 58%, #1A0810 100%) }
+
+.light{ color:var(--onlight-soft) }
+.light h1,.light h2,.light h3{ color:var(--onlight) }
+
+.scene::before{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:
+    radial-gradient(640px 420px at 86% 2%, rgba(251,236,229,.07), transparent 62%),
+    radial-gradient(560px 380px at 4% 94%, rgba(168,114,127,.12), transparent 62%);
+}
+.light.scene::before{
+  background:
+    radial-gradient(660px 440px at 88% 0%, rgba(92,33,51,.07), transparent 62%),
+    radial-gradient(580px 400px at 2% 96%, rgba(168,114,127,.1), transparent 62%);
+}
+
+.eyebrow{
+  display:inline-flex; align-items:center; gap:14px;
+  font-weight:400; font-size:var(--s--1);
+  letter-spacing:.26em; text-transform:uppercase; margin:0 0 18px; color:var(--rose);
+}
+.eyebrow::before{ content:""; width:36px; height:1px; background:currentColor }
+.light .eyebrow{ color:var(--wine) }
+.lede{ font-size:var(--s-1); line-height:1.6; max-width:60ch; color:var(--ondark-soft) }
+.light .lede{ color:var(--onlight-soft) }
+
+.pillbtn{
+  display:inline-flex; align-items:center; gap:11px; text-decoration:none;
+  font-weight:400; font-size:.77rem; letter-spacing:.1em;
+  padding:15px 28px; border-radius:999px;
+  transition:transform .25s cubic-bezier(.2,.8,.3,1), box-shadow .25s, background .25s;
+}
+.pillbtn svg{ transition:transform .25s }
+.pillbtn:hover svg{ transform:translateX(4px) }
+.btn-light{
+  background:var(--blush); color:#4A1B29; font-weight:500;
+  box-shadow:0 2px 6px rgba(42,14,24,.34), 0 14px 30px rgba(42,14,24,.32), inset 0 1px 0 rgba(255,255,255,.95);
+}
+.btn-light:hover{ transform:translateY(-3px); box-shadow:0 6px 14px rgba(42,14,24,.38), 0 24px 48px rgba(42,14,24,.38), inset 0 1px 0 #fff }
+.btn-hollow{
+  background:var(--glass); border:1px solid var(--glass-edge); color:var(--ondark);
+  backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); box-shadow:var(--lift-1);
+}
+.btn-hollow:hover{ transform:translateY(-3px); box-shadow:var(--lift-2) }
+.btn-deep{
+  background:linear-gradient(135deg,#6E2A3E,#431726); color:var(--blush); font-weight:500;
+  box-shadow:0 2px 6px rgba(92,33,51,.4), 0 14px 30px rgba(92,33,51,.32), inset 0 1px 0 rgba(255,255,255,.22);
+}
+.btn-deep:hover{ transform:translateY(-3px) }
+
+/* ================= NAV ================= */
+header.nav{
+  position:sticky; top:env(safe-area-inset-top,0px); z-index:90;
+  background:rgba(42,14,24,.6); backdrop-filter:blur(22px) saturate(170%);
+  -webkit-backdrop-filter:blur(22px) saturate(170%);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.nav-in{ display:flex; align-items:center; justify-content:space-between; gap:18px; min-height:62px }
+.brand{
+  position:relative; display:inline-flex; align-items:baseline; gap:2px;
+  font-family:var(--script); font-size:2.1rem; line-height:1;
+  text-decoration:none; color:var(--ondark); padding:2px 2px 8px;
+  letter-spacing:.01em; white-space:nowrap;
+}
+.brand i{ font-style:normal; color:var(--rose) }
+.brand::after{
+  content:""; position:absolute; left:2px; right:10px; bottom:2px; height:1px;
+  background:linear-gradient(90deg, transparent, var(--rose) 18%, var(--rose) 72%, transparent);
+  opacity:.65; transform-origin:left; transform:scaleX(.96); transition:transform .4s ease, opacity .4s;
+}
+.brand:hover::after{ transform:scaleX(1); opacity:1 }
+@media (max-width:420px){ .brand{ font-size:1.7rem } }
+.nav-links{ display:flex; gap:28px; list-style:none; margin:0; padding:0 }
+.nav-links a{ font-size:.73rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ondark-mute); text-decoration:none; transition:color .25s }
+.nav-links a:hover{ color:var(--ondark) }
+@media (max-width:1020px){ .nav-links{ display:none } }
+
+/* ================= HERO ================= */
+.hero-split{ display:grid; grid-template-columns:1.02fr .98fr; min-height:clamp(520px,76vh,780px) }
+@media (max-width:920px){ .hero-split{ grid-template-columns:1fr } }
+.hero-left{
+  padding:clamp(42px,5.4vw,80px) clamp(24px,4vw,64px);
+  display:flex; flex-direction:column; justify-content:center; position:relative; z-index:3;
+}
+.hero-left .kicker{
+  font-size:.62rem; letter-spacing:.3em; text-transform:uppercase;
+  color:var(--rose); margin-bottom:26px; line-height:2.1;
+}
+.hero-left h1{
+  font-size:var(--s-4); line-height:1.0; letter-spacing:.005em; margin:0 0 22px;
+  font-weight:400;
+}
+.hero-left h1 em{ font-style:italic; font-weight:400; color:var(--rose); display:block }
+.hero-left .pitch{ color:var(--ondark-soft); max-width:38ch; line-height:1.62 }
+.hero-rule{ width:72px; height:1px; background:rgba(216,168,168,.5); margin:26px 0 14px }
+.signature{
+  font-family:var(--script); font-size:clamp(2.2rem,1.6rem + 2.2vw,3.4rem);
+  line-height:1; color:var(--rose); margin:0 0 20px; opacity:.92;
+  text-shadow:0 2px 18px rgba(42,14,24,.5);
+}
+.hero-actions{ display:flex; flex-wrap:wrap; gap:13px; margin-top:28px }
+
+.hero-right{ position:relative; min-height:320px; overflow:hidden }
+.hero-right img.art{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover }
+.hero-right::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(100deg, rgba(58,19,34,.94) 0%, rgba(58,19,34,.32) 28%, transparent 58%);
+}
+@media (max-width:920px){ .hero-right::after{ background:linear-gradient(180deg, rgba(58,19,34,.82), transparent 42%) } }
+.hero-cities{
+  position:absolute; right:clamp(10px,1.6vw,22px); top:50%; transform:translateY(-50%);
+  z-index:4; display:flex; flex-direction:column; gap:22px; align-items:center;
+}
+.hero-cities span{
+  writing-mode:vertical-rl; font-size:.56rem; letter-spacing:.3em;
+  text-transform:uppercase; color:var(--ondark-mute);
+}
+.hero-cities i{ display:block; width:1px; height:40px; background:rgba(251,236,229,.28) }
+@media (max-width:920px){ .hero-cities{ display:none } }
+
+.idcard{
+  position:absolute; left:clamp(16px,3vw,42px); bottom:clamp(18px,3vw,38px); z-index:5;
+  display:flex; align-items:center; gap:15px; padding:13px 22px 13px 13px; border-radius:999px;
+  background:var(--glass-2); border:1px solid var(--glass-edge);
+  backdrop-filter:blur(32px) saturate(185%); -webkit-backdrop-filter:blur(32px) saturate(185%);
+  box-shadow:var(--lift-3);
+}
+.idcard .pic{
+  width:58px; height:58px; border-radius:50%; overflow:hidden; flex:none;
+  border:1px solid rgba(255,255,255,.3);
+  box-shadow:0 8px 20px rgba(42,14,24,.5), inset 0 1px 0 rgba(255,255,255,.3);
+}
+.idcard .pic img{ width:100%; height:100%; object-fit:cover }
+.idcard .nm{ font-family:var(--display); font-size:1rem; font-weight:500; line-height:1.2 }
+.idcard .rl{ font-size:.57rem; letter-spacing:.17em; text-transform:uppercase; color:var(--rose); margin-top:4px }
+.idcard .av{ display:inline-flex; align-items:center; gap:7px; margin-top:7px; font-size:.55rem; letter-spacing:.13em; text-transform:uppercase; color:var(--ondark-mute) }
+.dot{ width:6px; height:6px; border-radius:50%; background:#7FC79B; box-shadow:0 0 0 3px rgba(127,199,155,.2) }
+@media (max-width:920px){ .idcard{ position:static; margin:0 clamp(24px,4vw,64px) clamp(28px,4vw,40px) } }
+
+/* ================= ABOUT ================= */
+.about-grid{ display:grid; grid-template-columns:.62fr 1.38fr; gap:clamp(26px,4.4vw,58px); align-items:center }
+@media (max-width:920px){
+  .about-grid{ grid-template-columns:1fr }
+  .collage{ max-width:300px; margin-inline:0 }
+}
+.collage{ position:relative; display:grid; grid-template-columns:1.22fr .78fr; gap:12px;
+          align-items:start; max-width:340px; margin-inline:auto }
+.collage figure{
+  position:relative; margin:0; border-radius:18px; overflow:hidden;
+  box-shadow:var(--lift-lt-2); border:1px solid var(--glass-lt-edge);
+  transition:transform .5s cubic-bezier(.2,.8,.3,1), box-shadow .5s;
+}
+.collage figure:hover{ transform:translateY(-6px); box-shadow:var(--lift-lt-2), 0 44px 80px rgba(92,33,51,.18) }
+.collage figure::after{
+  content:""; position:absolute; inset:0; pointer-events:none; border-radius:inherit;
+  background:linear-gradient(118deg, rgba(255,255,255,.22) 0%, rgba(255,255,255,.05) 26%, transparent 46%);
+  mix-blend-mode:screen;
+}
+.collage figure img{ width:100%; aspect-ratio:3/4; object-fit:cover; object-position:center; transition:transform .8s cubic-bezier(.2,.8,.3,1) }
+
+/* ================= SHOWCASE BAND ================= */
+.showcase{ position:relative; min-height:clamp(340px,46vw,560px); display:grid; place-items:center }
+.showcase > img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+}
+.showcase::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(42,14,24,.74) 0%, rgba(42,14,24,.52) 42%, rgba(42,14,24,.92) 100%);
+}
+.showcase .panel{
+  position:relative; z-index:3; margin:clamp(24px,4vw,56px);
+  padding:clamp(24px,3.4vw,42px); border-radius:28px; max-width:620px; text-align:center;
+  background:var(--glass-2); border:1px solid var(--glass-edge);
+  backdrop-filter:blur(34px) saturate(185%); -webkit-backdrop-filter:blur(34px) saturate(185%);
+  box-shadow:var(--lift-3);
+}
+.showcase .panel h2{ font-size:var(--s-2) }
+.showcase .panel p{ color:var(--ondark-soft); margin-top:14px }
+.showcase .figs{ display:flex; justify-content:center; gap:clamp(18px,3vw,44px); margin-top:24px; flex-wrap:wrap }
+.showcase .fig{ min-width:0 }
+.showcase .fig b{ display:block; font-family:var(--display); font-size:1.5rem; font-weight:500; color:var(--blush) }
+.showcase .fig span{ display:block; font-size:.56rem; letter-spacing:.18em; text-transform:uppercase; color:var(--ondark-mute); margin-top:6px }
+.collage figure:hover img{ transform:scale(1.06) }
+.collage .b{ margin-top:34px }
+.collage .b img{ aspect-ratio:3/4 }
+.about-body h2{ max-width:17ch }
+.about-body h2 em{ font-style:italic; color:var(--wine) }
+.about-body p{ color:var(--onlight-soft); max-width:52ch; margin-top:20px }
+.about-link{
+  display:inline-flex; align-items:center; gap:12px; margin-top:26px; text-decoration:none;
+  font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--wine);
+  padding-bottom:7px; border-bottom:1px solid rgba(92,33,51,.3); transition:gap .25s, color .25s;
+}
+.about-link:hover{ gap:18px; color:var(--onlight) }
+
+/* ================= EXPERTISE STRIP ================= */
+.exp-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:0 }
+@media (max-width:980px){ .exp-grid{ grid-template-columns:repeat(2,1fr) } }
+@media (max-width:540px){ .exp-grid{ grid-template-columns:1fr } }
+.exp{
+  padding:clamp(22px,2.6vw,32px) clamp(16px,2vw,26px); min-width:0; position:relative;
+  transition:background .35s;
+}
+.exp + .exp::before{
+  content:""; position:absolute; left:0; top:18%; bottom:18%; width:1px;
+  background:rgba(251,236,229,.14);
+}
+@media (max-width:980px){ .exp + .exp::before{ display:none } }
+.exp:hover{ background:rgba(255,255,255,.04) }
+.exp .gl{
+  width:40px; height:40px; border-radius:14px; display:grid; place-items:center;
+  color:var(--rose); background:var(--glass); border:1px solid var(--glass-edge);
+  box-shadow:var(--lift-1); margin-bottom:18px;
+}
+.exp h3{ font-family:var(--sans); font-weight:500; font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; color:var(--ondark) }
+.exp p{ font-size:.85rem; line-height:1.6; color:var(--ondark-mute); margin-top:10px }
+
+/* ================= WORK ================= */
+.work-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:26px; flex-wrap:wrap; margin-bottom:clamp(26px,3.4vw,42px) }
+.work-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(15px,2.2vw,24px) }
+.work-grid.pair{ grid-template-columns:repeat(2,1fr); margin-top:clamp(15px,2.2vw,24px) }
+@media (max-width:880px){ .work-grid,.work-grid.pair{ grid-template-columns:1fr; max-width:470px; margin-inline:auto } }
+.tile{
+  position:relative; border-radius:22px; overflow:hidden; min-width:0;
+  background:linear-gradient(160deg, rgba(255,252,250,.78), rgba(243,224,224,.6));
+  border:1px solid var(--glass-lt-edge);
+  backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+  box-shadow:var(--lift-lt-2);
+  transition:transform .42s cubic-bezier(.2,.8,.3,1), box-shadow .42s;
+}
+.tile:hover{ transform:translateY(-8px); box-shadow:var(--lift-lt-2), 0 40px 78px rgba(92,33,51,.2) }
+.tile::after{
+  content:""; position:absolute; inset:0; pointer-events:none; border-radius:inherit; z-index:3;
+  background:linear-gradient(122deg, rgba(255,255,255,.3) 0%, rgba(255,255,255,.06) 24%, transparent 44%);
+  mix-blend-mode:screen;
+}
+.tile .shot{ position:relative; display:grid; place-items:center; width:100%; aspect-ratio:4/3; background:#fff; padding:10px; overflow:hidden }
+.tile .shot img{ width:100%; height:100%; object-fit:contain; transition:transform .6s cubic-bezier(.2,.8,.3,1) }
+.tile:hover .shot img{ transform:scale(1.035) }
+.tile .tag{
+  position:absolute; left:14px; bottom:14px; z-index:2; padding:5px 12px; border-radius:999px;
+  font-size:.53rem; letter-spacing:.17em; text-transform:uppercase; color:var(--blush);
+  background:rgba(58,19,34,.7); border:1px solid rgba(255,255,255,.18);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+}
+.tile .meta{ padding:18px 20px 22px; display:flex; align-items:flex-start; justify-content:space-between; gap:12px }
+.tile .t{ font-family:var(--display); font-size:1.04rem; font-weight:500; color:var(--onlight) }
+.tile .s{ font-size:.58rem; letter-spacing:.18em; text-transform:uppercase; color:var(--onlight-mute); margin-top:6px }
+.tile .ar{ flex:none; color:var(--wine); margin-top:4px; transition:transform .3s }
+.tile:hover .ar{ transform:translateX(4px) }
+
+/* ================= DETAIL ================= */
+.detail{ --accent:#8E2742 }
+.detail.a2{ --accent:#A8512F }
+.detail.a3{ --accent:#6E2A4E }
+.detail.a4{ --accent:#9A3340 }
+.detail.a5{ --accent:#7A3A5C }
+.detail + .detail{ margin-top:clamp(30px,4.2vw,54px) }
+.dcard{
+  position:relative; overflow:hidden;
+  border-radius:30px; padding:clamp(24px,3.4vw,44px);
+  background:linear-gradient(160deg, rgba(255,252,250,.9), rgba(244,223,219,.7));
+  border:1px solid var(--glass-lt-edge); box-shadow:var(--lift-lt-2);
+  backdrop-filter:blur(22px) saturate(160%); -webkit-backdrop-filter:blur(22px) saturate(160%);
+}
+.dcard::after{
+  content:""; position:absolute; inset:0; pointer-events:none; border-radius:inherit;
+  background:linear-gradient(128deg, rgba(255,255,255,.44) 0%, rgba(255,255,255,.1) 22%, transparent 42%);
+  mix-blend-mode:screen;
+}
+.dhead{ display:flex; align-items:baseline; gap:18px; flex-wrap:wrap }
+.dnum{ font-family:var(--display); font-size:clamp(1.9rem,1.5rem + 1.5vw,2.8rem); color:var(--accent); line-height:1 }
+.dcard h3{ font-size:clamp(1.34rem,1.14rem + .9vw,1.92rem); color:var(--onlight) }
+.kindchip{
+  display:inline-block; margin-top:12px; padding:6px 15px; border-radius:999px;
+  font-size:.56rem; letter-spacing:.16em; text-transform:uppercase; color:#fff;
+  background:var(--accent); box-shadow:0 4px 12px rgba(92,33,51,.26), inset 0 1px 0 rgba(255,255,255,.3);
+}
+.dbody{ margin-top:22px; display:grid; grid-template-columns:1.04fr .96fr; gap:clamp(20px,3vw,44px) }
+@media (max-width:880px){ .dbody{ grid-template-columns:1fr } }
+.dbody p{ color:var(--onlight-soft); max-width:56ch }
+.points{ list-style:none; margin:0; padding:0; display:grid; gap:10px }
+.points li{ position:relative; padding-left:22px; font-size:.9rem; line-height:1.58; color:var(--onlight-soft) }
+.points li::before{
+  content:""; position:absolute; left:0; top:.6em; width:7px; height:7px; border-radius:2px;
+  background:var(--accent); box-shadow:0 1px 3px rgba(92,33,51,.3);
+}
+.stack{ display:flex; flex-wrap:wrap; gap:8px; margin:22px 0 0; padding:0; list-style:none }
+.stack li{
+  font-size:.62rem; letter-spacing:.13em; text-transform:uppercase; color:var(--accent);
+  padding:7px 13px; border-radius:999px;
+  background:rgba(255,252,250,.84); border:1px solid rgba(92,33,51,.12); box-shadow:var(--lift-lt-1);
+}
+.plates{ margin-top:clamp(20px,3vw,34px); display:grid; gap:clamp(13px,2vw,20px) }
+.plate{
+  border-radius:18px; overflow:hidden; background:#fff;
+  border:1px solid rgba(92,33,51,.1); box-shadow:var(--lift-lt-2);
+  transition:transform .42s cubic-bezier(.2,.8,.3,1);
+}
+.plate{ position:relative }
+.plate:hover{ transform:translateY(-5px); box-shadow:var(--lift-lt-2), 0 36px 68px rgba(92,33,51,.16) }
+.plate figcaption{
+  display:flex; align-items:center; gap:10px; padding:12px 16px;
+  background:linear-gradient(180deg,#FFFCFA,#F7E8E4); border-bottom:1px solid rgba(92,33,51,.08);
+  font-size:.56rem; letter-spacing:.17em; text-transform:uppercase; color:var(--onlight-mute);
+}
+.plate figcaption::after{ content:""; height:1px; background:rgba(92,33,51,.1); flex:1 }
+.plate img{ width:100%; height:auto }
+
+/* ================= SERVICES ================= */
+.svc-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:18px }
+.svc{
+  position:relative; padding:28px 26px; border-radius:26px; min-width:0; overflow:hidden;
+  background:var(--glass); border:1px solid var(--glass-edge);
+  backdrop-filter:blur(26px) saturate(175%); -webkit-backdrop-filter:blur(26px) saturate(175%);
+  box-shadow:var(--lift-2);
+  transition:transform .42s cubic-bezier(.2,.8,.3,1), box-shadow .42s;
+  --tint:#F3D5CE;
+}
+.svc:nth-child(2){ --tint:#E9C0BE } .svc:nth-child(3){ --tint:#DEAFB3 }
+.svc:nth-child(4){ --tint:#D3A0A9 } .svc:nth-child(5){ --tint:#C8929F }
+.svc:nth-child(6){ --tint:#BD8695 }
+.svc:hover{ transform:translateY(-7px); box-shadow:var(--lift-3) }
+.svc::after{
+  content:""; position:absolute; inset:0; pointer-events:none; border-radius:inherit;
+  background:linear-gradient(126deg, rgba(255,255,255,.14) 0%, rgba(255,255,255,.03) 28%, transparent 48%);
+}
+.svc .ic{
+  width:48px; height:48px; border-radius:16px; display:grid; place-items:center;
+  color:#4A1B29; background:linear-gradient(145deg, var(--tint), rgba(255,252,250,.86));
+  box-shadow:0 6px 18px rgba(42,14,24,.34), inset 0 1px 0 rgba(255,255,255,.9);
+}
+.svc h3{ font-family:var(--sans); font-weight:500; font-size:.76rem; letter-spacing:.17em; text-transform:uppercase; margin-top:20px }
+.svc p{ color:var(--ondark-soft); font-size:.88rem; line-height:1.6; margin-top:11px }
+
+/* ================= CREDENTIALS ================= */
+.cred-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(214px,1fr)); gap:17px; margin-top:clamp(24px,3.2vw,40px) }
+.cred{
+  padding:30px 24px; border-radius:24px; text-align:center; min-width:0; --accent:#8E2742;
+  background:linear-gradient(160deg, rgba(255,252,250,.92), rgba(240,214,211,.74));
+  border:1px solid var(--glass-lt-edge); box-shadow:var(--lift-lt-2);
+  transition:transform .42s cubic-bezier(.2,.8,.3,1), box-shadow .42s;
+}
+.cred:nth-child(2){ --accent:#A8512F } .cred:nth-child(3){ --accent:#6E2A4E }
+.cred:nth-child(4){ --accent:#9A3340 } .cred:nth-child(5){ --accent:#7A3A5C }
+.cred{ position:relative; overflow:hidden }
+.cred:hover{ transform:translateY(-7px); box-shadow:var(--lift-lt-2), 0 40px 76px rgba(92,33,51,.18) }
+.cred::after{
+  content:""; position:absolute; inset:0; pointer-events:none; border-radius:inherit;
+  background:linear-gradient(124deg, rgba(255,255,255,.4) 0%, rgba(255,255,255,.08) 26%, transparent 46%);
+  mix-blend-mode:screen;
+}
+.cred .lr{
+  width:54px; height:54px; margin:0 auto 18px; border-radius:18px;
+  display:grid; place-items:center; color:#fff; background:var(--accent);
+  box-shadow:0 8px 22px rgba(92,33,51,.26), inset 0 1px 0 rgba(255,255,255,.34);
+}
+.cred .n{ font-family:var(--display); font-size:1.02rem; color:var(--onlight); line-height:1.4; font-weight:500 }
+.cred .sub{ font-size:.6rem; letter-spacing:.15em; text-transform:uppercase; color:var(--onlight-mute); margin-top:9px }
+
+/* ================= TRIPTYCH ================= */
+.tript{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(14px,2.2vw,22px) }
+@media (max-width:820px){ .tript{ grid-template-columns:1fr; max-width:420px; margin-inline:auto } }
+.tfig{
+  position:relative; margin:0; border-radius:24px; overflow:hidden;
+  border:1px solid var(--glass-edge); box-shadow:var(--lift-2);
+  transition:transform .5s cubic-bezier(.2,.8,.3,1), box-shadow .5s;
+}
+.tfig:hover{ transform:translateY(-8px); box-shadow:var(--lift-3) }
+.tfig img{ width:100%; aspect-ratio:4/5; object-fit:cover; transition:transform .8s cubic-bezier(.2,.8,.3,1) }
+.tfig:hover img{ transform:scale(1.06) }
+.tfig figcaption{
+  position:absolute; inset:auto 0 0 0; padding:20px;
+  background:linear-gradient(to top, rgba(42,14,24,.9), rgba(42,14,24,.3) 56%, transparent);
+}
+.tfig .lbl{ font-size:.54rem; letter-spacing:.2em; text-transform:uppercase; color:var(--rose) }
+.tfig .ttl{ font-family:var(--display); font-size:1.05rem; font-weight:500; margin-top:5px; color:var(--ondark) }
+
+/* ================= QUOTE ================= */
+.s-quote{ position:relative }
+.s-quote .inner{ position:relative; z-index:2; text-align:center; max-width:760px; margin:0 auto }
+.s-quote .mk{ font-family:var(--display); font-size:3.4rem; line-height:.6; color:var(--mauve) }
+.s-quote blockquote{
+  margin:22px 0 0; font-family:var(--display); font-style:italic;
+  font-size:clamp(1.14rem,1rem + .7vw,1.5rem); line-height:1.6; color:var(--onlight);
+}
+.s-quote .by{ font-size:.62rem; letter-spacing:.22em; text-transform:uppercase; color:var(--onlight-mute); margin-top:20px }
+
+/* ================= CONTACT ================= */
+.contact-grid{ display:grid; grid-template-columns:1.04fr .96fr; gap:clamp(26px,4.4vw,56px); align-items:center }
+@media (max-width:920px){ .contact-grid{ grid-template-columns:1fr } }
+.rows{ list-style:none; margin:28px 0 0; padding:0; display:grid; gap:12px; max-width:560px }
+.row{
+  display:flex; align-items:center; gap:15px; flex-wrap:wrap;
+  padding:16px 20px; border-radius:18px;
+  background:var(--glass); border:1px solid var(--glass-edge);
+  backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); box-shadow:var(--lift-1);
+  transition:transform .3s, box-shadow .3s;
+}
+.row{ position:relative; overflow:hidden }
+.row:hover{ transform:translateX(4px); box-shadow:var(--lift-2) }
+.row::after{
+  content:""; position:absolute; inset:0; pointer-events:none; border-radius:inherit;
+  background:linear-gradient(130deg, rgba(255,255,255,.1) 0%, transparent 38%);
+}
+.row .ic{ flex:none; color:var(--rose) }
+.row .grow{ flex:1 1 200px; min-width:0 }
+.lab{ font-size:.55rem; letter-spacing:.2em; text-transform:uppercase; color:var(--ondark-mute); display:block }
+.val{ font-size:.92rem; word-break:break-word; margin-top:2px }
+.val a{ text-decoration:none; border-bottom:1px solid rgba(216,168,168,.4) }
+.val a:hover{ color:var(--rose) }
+.copy{
+  font-family:var(--sans); font-size:.56rem; letter-spacing:.16em; text-transform:uppercase;
+  background:rgba(255,255,255,.08); color:var(--ondark-soft);
+  border:1px solid var(--glass-edge); padding:9px 15px; border-radius:999px; cursor:pointer;
+  transition:all .25s;
+}
+.copy:hover{ color:var(--ondark); border-color:var(--rose); transform:translateY(-1px) }
+.copy[data-done="1"]{ background:var(--rose); color:#2A0E18; border-color:transparent }
+.quoteframe{
+  position:relative; border-radius:28px; overflow:hidden; min-height:340px;
+  border:1px solid var(--glass-edge); box-shadow:var(--lift-3);
+}
+.quoteframe img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover }
+.quoteframe .in{
+  position:relative; z-index:2; padding:clamp(28px,3.6vw,42px); min-height:340px;
+  background:linear-gradient(170deg, rgba(42,14,24,.4), rgba(42,14,24,.8));
+  display:flex; flex-direction:column; justify-content:flex-end;
+}
+.quoteframe .mk{ font-family:var(--display); font-size:3rem; line-height:.6; color:var(--rose) }
+.quoteframe p{ font-family:var(--display); font-style:italic; font-size:1.12rem; line-height:1.55; margin-top:16px }
+.quoteframe .by{ font-size:.56rem; letter-spacing:.22em; text-transform:uppercase; color:var(--ondark-mute); margin-top:16px }
+
+.footline{ background:linear-gradient(90deg,#5C2133,#6E2A3E 50%,#3F1623); padding-block:18px; text-align:center }
+.footline span{ font-weight:500; font-size:.64rem; letter-spacing:.3em; text-transform:uppercase; color:var(--blush) }
+.colophon{ background:var(--plum); text-align:center; padding-block:26px; font-size:.58rem; letter-spacing:.2em; text-transform:uppercase; color:var(--ondark-mute) }
+
+@media (prefers-reduced-motion: no-preference){
+  .rise{ animation:rise .9s cubic-bezier(.2,.8,.3,1) backwards }
+  .d1{ animation-delay:.09s } .d2{ animation-delay:.18s } .d3{ animation-delay:.27s }
+  @keyframes rise{ from{ opacity:0; transform:translateY(16px) } to{ opacity:1; transform:none } }
+}
+</style>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Thisuli Ekanayaka, home">Thisuli Ekanayaka<i>.</i></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#credentials">Credentials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="pillbtn btn-light" href="#contact" style="padding:11px 20px;font-size:.66rem">
+      Hire me
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ========== HERO ========== -->
+<section class="scene s-hero">
+  <div class="hero-split">
+    <div class="hero-left">
+      <p class="kicker rise">Cyber Security<br>Secure Development<br>Digital Design</p>
+      <h1 class="rise d1">Thisuli<em>Ekanayaka</em></h1>
+      <div class="hero-rule rise d1"></div>
+      <p class="signature rise d1" aria-hidden="true">Thisuli Ekanayaka</p>
+      <p class="pitch rise d2">
+        I design systems that earn their trust, then prove they hold under pressure.
+        Security belongs in the first sketch, never in the final review.
+      </p>
+      <div class="hero-actions rise d3">
+        <a class="pillbtn btn-light" href="#work">
+          Explore the work
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="pillbtn btn-hollow" href="#contact">
+          Start a conversation
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <img class="art" src="assets/img-hero.webp" width="1240" height="1499"
+           alt="Hands at a laptop with a holographic stack of AI and analytics panels above the keyboard">
+    </div>
+  </div>
+
+  <div class="hero-cities">
+    <span>Colombo</span><i></i><span>Remote</span><i></i><span>Worldwide</span>
+  </div>
+
+  <div class="idcard rise d2">
+    <span class="pic"><img src="assets/portrait-round.png" width="420" height="420"
+          alt="Portrait of Thisuli Ekanayaka"></span>
+    <span>
+      <span class="nm">Thisuli Ekanayaka</span>
+      <span class="rl">Security Engineer and Developer</span>
+      <span class="av"><span class="dot"></span> Available for work</span>
+    </span>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section id="about" class="scene s-about light pad">
+  <div class="wrap about-grid">
+    <div class="collage">
+      <figure>
+        <img src="assets/img-ops.webp" width="1500" height="2000" loading="lazy"
+             alt="A wall sized security operations display showing coverage, threat maps and live charts">
+      </figure>
+      <figure class="b">
+        <img src="assets/img-lab.webp" width="1100" height="1466" loading="lazy"
+             alt="Hands at a laptop with an analytics and AI interface projected above it">
+      </figure>
+    </div>
+
+    <div class="about-body">
+      <p class="eyebrow">About</p>
+      <h2>I build systems that hold, and <em>prove that they do.</em></h2>
+      <p>
+        I am a cyber security engineer and developer working from Sri Lanka, holding a
+        BSc (Hons) in Cyber Security from the University of Bedfordshire with
+        certification from Google, Cisco and ISC2. My work runs the length of a system:
+        the architecture, the build, the hardening, and the evidence that proves it
+        behaves the way it claims to.
+      </p>
+      <p>
+        That has meant a security operations platform that scores a cloud estate and
+        explains every verdict it reaches, a distribution platform that brought an
+        entire sales territory into one view, a student portal engineered to survive
+        the loss of its own network, and an awareness programme taught in school
+        laboratories.
+      </p>
+      <a class="about-link" href="#work">
+        See the work
+        <svg width="20" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M0 6h21M16 1l5 5-5 5"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== EXPERTISE ========== -->
+<section id="expertise" class="scene s-exp">
+  <div class="wrap" style="padding-block:clamp(16px,2.2vw,26px)">
+    <p class="eyebrow" style="margin-bottom:0">Expertise</p>
+  </div>
+  <div class="wrap">
+    <div class="exp-grid">
+      <article class="exp">
+        <span class="gl"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 20 5v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <h3>Threat Detection</h3>
+        <p>Behavioural baselines and detection logic that surface the one incident that matters.</p>
+      </article>
+      <article class="exp">
+        <span class="gl"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="2.6"/><circle cx="5" cy="5" r="1.8"/><circle cx="19" cy="5" r="1.8"/><circle cx="5" cy="19" r="1.8"/><circle cx="19" cy="19" r="1.8"/><path d="m7 7 3 3m4 0 3-3M7 17l3-3m4 0 3 3"/></svg></span>
+        <h3>Network Defence</h3>
+        <p>Segmentation, access design and monitoring that catches an intrusion while it is small.</p>
+      </article>
+      <article class="exp">
+        <span class="gl"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6.5 18A4.5 4.5 0 0 1 6 9a6 6 0 0 1 11.6-1.5A4 4 0 0 1 18 18z"/></svg></span>
+        <h3>Cloud Security</h3>
+        <p>Posture scoring, policy engines and containment that fails closed rather than open.</p>
+      </article>
+      <article class="exp">
+        <span class="gl"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M13 4l-2 16"/></svg></span>
+        <h3>Platform Engineering</h3>
+        <p>Web and mobile systems built end to end, with audit trails and data integrity designed in.</p>
+      </article>
+      <article class="exp">
+        <span class="gl"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="13.5" cy="6.5" r="1.3"/><circle cx="17.5" cy="10.5" r="1.3"/><circle cx="8.5" cy="7.5" r="1.3"/><circle cx="6.5" cy="12.5" r="1.3"/><path d="M12 2a10 10 0 0 0 0 20c1.4 0 2.5-1.1 2.5-2.5 0-.7-.2-1.2-.7-1.7-.4-.4-.6-1-.6-1.6 0-1.4 1.1-2.5 2.5-2.5H17a5 5 0 0 0 5-5c0-4.4-4.5-8-10-8z"/></svg></span>
+        <h3>Interface Design</h3>
+        <p>Dashboards and interfaces that make a complex system legible at a glance.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SHOWCASE ========== -->
+<section class="scene showcase">
+  <img src="assets/img-band.webp" width="1800" height="1012" loading="lazy"
+       alt="A security operations wall of dashboards glowing in a dark room">
+  <div class="panel">
+    <p class="eyebrow" style="justify-content:center">The Practice</p>
+    <h2>Built in the open, tested until it holds</h2>
+    <p>
+      Every system on this page was architected, written, hardened and documented by
+      hand, then put in front of real users with real consequences.
+    </p>
+    <div class="figs">
+      <div class="fig"><b>5</b><span>Systems delivered</span></div>
+      <div class="fig"><b>80</b><span>Automated tests</span></div>
+      <div class="fig"><b>5</b><span>Certifications</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WORK ========== -->
+<section id="work" class="scene s-work light pad">
+  <div class="wrap">
+    <div class="work-head">
+      <div>
+        <p class="eyebrow">Featured Work</p>
+        <h2>Systems that Stay Standing</h2>
+      </div>
+      <p class="lede" style="max-width:36ch">
+        Five projects carried from first sketch to something running, documentation and
+        awkward production bugs included.
+      </p>
+    </div>
+
+    <div class="work-grid">
+      <article class="tile">
+        <div class="shot">
+          <img src="assets/shot-cloudshield-map.webp" width="1655" height="760" loading="lazy"
+               alt="Cloudshield live attack map showing threat origins and the protected region">
+          <span class="tag">Client Project</span>
+        </div>
+        <div class="meta">
+          <div><div class="t">Cloudshield</div><div class="s">Security Operations</div></div>
+          <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+        </div>
+      </article>
+      <article class="tile">
+        <div class="shot">
+          <img src="assets/shot-sfa-dash.webp" width="1847" height="953" loading="lazy"
+               alt="Swadeshi distribution dashboard with outlet counts, sales trajectory and top products">
+          <span class="tag">Client Project</span>
+        </div>
+        <div class="meta">
+          <div><div class="t">Swadeshi</div><div class="s">Sales Force Automation</div></div>
+          <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+        </div>
+      </article>
+      <article class="tile">
+        <div class="shot">
+          <img src="assets/shot-wpssp.webp" width="2000" height="1256" loading="lazy"
+               alt="Smart Student Portal dashboard with a student journey funnel and payment queue">
+          <span class="tag">Client Project</span>
+        </div>
+        <div class="meta">
+          <div><div class="t">Student Portal</div><div class="s">Offline Capable System</div></div>
+          <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+        </div>
+      </article>
+    </div>
+
+    <div class="work-grid pair">
+      <article class="tile">
+        <div class="shot">
+          <img src="assets/shot-field-app.webp" width="2000" height="1250" loading="lazy"
+               alt="Field representative Android app showing the orders screen">
+          <span class="tag">Mobile</span>
+        </div>
+        <div class="meta">
+          <div><div class="t">Field Rep App</div><div class="s">Android Companion</div></div>
+          <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+        </div>
+      </article>
+      <article class="tile">
+        <div class="shot">
+          <img src="assets/shot-awareness.webp" width="2000" height="1250" loading="lazy"
+               alt="Cyber awareness session delivered in a school computer laboratory">
+          <span class="tag">Community</span>
+        </div>
+        <div class="meta">
+          <div><div class="t">Cyber Awareness</div><div class="s">Education Programme</div></div>
+          <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== DETAIL ========== -->
+<section class="scene s-detail light pad">
+  <div class="wrap">
+    <div style="text-align:center;max-width:680px;margin:0 auto clamp(28px,3.8vw,50px)">
+      <p class="eyebrow">In detail</p>
+      <h2>The Work, Closer Up</h2>
+    </div>
+
+    <article class="detail">
+      <div class="dcard">
+        <div class="dhead">
+          <span class="dnum">01</span>
+          <div><h3>Cloudshield</h3><span class="kindchip">Security Operations Platform &middot; Client Project</span></div>
+        </div>
+        <div class="dbody">
+          <p>
+            Cloudshield is organised around three movements: prevent, detect and respond.
+            It watches a cloud estate continuously, reduces its posture to one honest
+            headline figure, surfaces the single incident that matters before the ninety
+            that do not, and explains the reasoning behind every verdict rather than
+            asking an analyst to trust it blindly.
+          </p>
+          <ul class="points">
+            <li>Behavioural baselining paired with a graph threat engine for anomaly detection</li>
+            <li>Each incident mapped to MITRE ATT&amp;CK with a confidence score and annual risk figure</li>
+            <li>Automated containment gated by a safety check and a fail closed policy engine</li>
+            <li>Attack map built on offline geographic lookup, free of external dependency</li>
+            <li>Eighty passing automated tests and seven reproducible controlled experiments</li>
+          </ul>
+        </div>
+        <ul class="stack"><li>Python</li><li>Graph neural networks</li><li>Federated learning</li><li>MITRE ATT&amp;CK</li><li>Explainable AI</li><li>AWS</li></ul>
+        <div class="plates">
+          <figure class="plate">
+            <figcaption>Live attack map</figcaption>
+            <img src="assets/shot-cloudshield-map.webp" width="1655" height="760" loading="lazy"
+                 alt="Cloudshield live attack map showing threat origins, the protected region and a threat origins table">
+          </figure>
+          <figure class="plate">
+            <figcaption>Incident queue and investigation</figcaption>
+            <img src="assets/shot-cloudshield-queue.webp" width="1648" height="754" loading="lazy"
+                 alt="Cloudshield incident queue with an investigation panel showing detection confidence, MITRE mapping and containment actions">
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <article class="detail a2">
+      <div class="dcard">
+        <div class="dhead">
+          <span class="dnum">02</span>
+          <div><h3>Swadeshi Distribution Platform</h3><span class="kindchip">Sales Force Automation &middot; Client Project</span></div>
+        </div>
+        <div class="dbody">
+          <p>
+            A distribution business runs on information usually scattered across paper,
+            memory and phone calls. This platform gathers it into one operational view:
+            every representative, every outlet and every route across the Kalawana
+            territory. Delivered across five two week sprints, where I served first as
+            Startup Manager and later as Risk Manager.
+          </p>
+          <ul class="points">
+            <li>Built the returns, representative visit and invoice cancellation modules</li>
+            <li>Live sales trajectory, stock movement and top product reporting</li>
+            <li>Traced and resolved silent data loss caused by ephemeral container storage</li>
+            <li>Role based administrative access backed by a complete audit trail</li>
+            <li>Owned the risk plan, responsibility matrix and delivery documentation</li>
+          </ul>
+        </div>
+        <ul class="stack"><li>Laravel 11</li><li>PHP</li><li>MySQL</li><li>REST API</li><li>Agile and Scrum</li></ul>
+        <div class="plates">
+          <figure class="plate">
+            <figcaption>Distribution dashboard</figcaption>
+            <img src="assets/shot-sfa-dash.webp" width="1847" height="953" loading="lazy"
+                 alt="Swadeshi dashboard showing outlet and product counts, a sales trajectory chart and a top products list">
+          </figure>
+          <figure class="plate">
+            <figcaption>Secure sign in</figcaption>
+            <img src="assets/shot-sfa-login.webp" width="1847" height="952" loading="lazy"
+                 alt="Swadeshi distribution platform sign in screen with brand panel and login form">
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <article class="detail a3">
+      <div class="dcard">
+        <div class="dhead">
+          <span class="dnum">03</span>
+          <div><h3>Smart Student Portal</h3><span class="kindchip">Offline Capable Education System &middot; Client Project</span></div>
+        </div>
+        <div class="dbody">
+          <p>
+            The Western Province Smart Student Portal was shaped by one demanding
+            condition: the institution could not depend on the internet, so the system
+            had to work without it. The result follows a student from sitting an
+            examination to uploading a final assessment, and keeps that journey intact
+            whether or not the network is there.
+          </p>
+          <ul class="points">
+            <li>Registration, examinations and wellness checks all run without a connection</li>
+            <li>Uploads, payments and email stay online and reconcile the moment it returns</li>
+            <li>Funnel view exposing exactly where students fall away between stages</li>
+            <li>Payment verification queue matched on counter and bank reference</li>
+          </ul>
+        </div>
+        <ul class="stack"><li>Offline capable</li><li>Progressive web app</li><li>Data sync</li><li>Dashboard design</li></ul>
+        <div class="plates">
+          <figure class="plate">
+            <figcaption>Administrator dashboard in local network mode</figcaption>
+            <img src="assets/shot-wpssp.webp" width="2000" height="1256" loading="lazy"
+                 alt="Smart Student Portal dashboard with a student journey funnel, registration and payment charts, a wellness check breakdown and a recent activity table">
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <article class="detail a4">
+      <div class="dcard">
+        <div class="dhead">
+          <span class="dnum">04</span>
+          <div><h3>Field Rep App</h3><span class="kindchip">Android Companion &middot; Mobile</span></div>
+        </div>
+        <div class="dbody">
+          <p>
+            A representative on a route has one hand free, a few seconds between
+            customers and a connection that comes and goes. The companion app is built
+            for exactly those conditions: orders, returns and visit confirmations
+            captured at the counter, queued locally, and settled the moment signal
+            returns.
+          </p>
+          <ul class="points">
+            <li>Orders grouped by month with running totals and live status on every line</li>
+            <li>Cancellation handled in a single tap, with the reason recorded against the order</li>
+            <li>Routes, returns and stock reachable from one bar at the base of the screen</li>
+            <li>High contrast interface that stays legible in direct sunlight</li>
+          </ul>
+        </div>
+        <ul class="stack"><li>Flutter</li><li>Dart</li><li>Android</li><li>Offline sync</li></ul>
+        <div class="plates">
+          <figure class="plate">
+            <figcaption>Orders screen with live status</figcaption>
+            <img src="assets/shot-field-app.webp" width="2000" height="1250" loading="lazy"
+                 alt="Field representative Android app orders screen showing monthly filters, order totals and pending and cancelled statuses">
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <article class="detail a5">
+      <div class="dcard">
+        <div class="dhead">
+          <span class="dnum">05</span>
+          <div><h3>Cyber Awareness Programme</h3><span class="kindchip">Security Education &middot; Community</span></div>
+        </div>
+        <div class="dbody">
+          <p>
+            Most breaches begin with a person rather than a protocol. This programme is
+            delivered in person to Sri Lankan school students and built around situations
+            they actually meet online, written in language they recognise and structured
+            closer to a game than a compliance module. Students work through each
+            scenario on the machines in front of them and defend their answers out loud.
+          </p>
+          <ul class="points">
+            <li>Browser based scenario quiz of fifteen situational questions</li>
+            <li>Narrated walkthrough of an attack unfolding one step at a time</li>
+            <li>Threat guide covering five social platforms and the specific risk on each</li>
+            <li>Delivered live in school computer laboratories with open discussion</li>
+          </ul>
+        </div>
+        <ul class="stack"><li>Security awareness</li><li>Curriculum design</li><li>JavaScript</li><li>Workshop delivery</li></ul>
+        <div class="plates">
+          <figure class="plate">
+            <figcaption>Session delivery, school computer laboratory</figcaption>
+            <img src="assets/shot-awareness.webp" width="2000" height="1250" loading="lazy"
+                 alt="Thisuli Ekanayaka presenting a scenario question to students in a school computer laboratory">
+          </figure>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section id="services" class="scene s-services pad">
+  <div class="wrap">
+    <div style="text-align:center;max-width:680px;margin:0 auto clamp(28px,3.8vw,46px)">
+      <p class="eyebrow">Services</p>
+      <h2>What I Offer</h2>
+    </div>
+    <div class="svc-grid">
+      <article class="svc">
+        <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 20 5v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <h3>Cyber Security Consulting</h3>
+        <p>Reviewing a system for the weaknesses that matter, then setting out what to fix, in what order and at what cost.</p>
+      </article>
+      <article class="svc">
+        <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="2.6"/><circle cx="5" cy="5" r="1.8"/><circle cx="19" cy="5" r="1.8"/><circle cx="5" cy="19" r="1.8"/><circle cx="19" cy="19" r="1.8"/><path d="m7 7 3 3m4 0 3-3M7 17l3-3m4 0 3 3"/></svg></span>
+        <h3>Network Security</h3>
+        <p>Segmentation, firewall and access design, traffic analysis and the monitoring needed to notice an intrusion while it is still small.</p>
+      </article>
+      <article class="svc">
+        <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h4l2.5-6 3.5 12 2.5-6H21"/></svg></span>
+        <h3>Detection and Response</h3>
+        <p>Detection logic, triage workflow and a response plan rehearsed before it is needed rather than written during the incident.</p>
+      </article>
+      <article class="svc">
+        <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 19c3.9 0 7-2.7 7-6s-3.1-6-7-6-7 2.7-7 6c0 1.4.6 2.7 1.5 3.7L5 20z"/></svg></span>
+        <h3>Awareness Training</h3>
+        <p>Sessions for schools, teams and small businesses on the attacks they will actually meet, delivered in plain language.</p>
+      </article>
+      <article class="svc">
+        <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M13 4l-2 16"/></svg></span>
+        <h3>Web and Mobile Development</h3>
+        <p>Websites, dashboards and Android applications built end to end, with authentication, audit trails and data integrity designed in from the start.</p>
+      </article>
+      <article class="svc">
+        <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="13.5" cy="6.5" r="1.4"/><circle cx="17.5" cy="10.5" r="1.4"/><circle cx="8.5" cy="7.5" r="1.4"/><circle cx="6.5" cy="12.5" r="1.4"/><path d="M12 2a10 10 0 0 0 0 20c1.4 0 2.5-1.1 2.5-2.5 0-.7-.2-1.2-.7-1.7-.4-.4-.6-1-.6-1.6 0-1.4 1.1-2.5 2.5-2.5H17a5 5 0 0 0 5-5c0-4.4-4.5-8-10-8z"/></svg></span>
+        <h3>Design and Visual Identity</h3>
+        <p>Interface design, responsive layouts and brand work, from first wireframe through to a finished system someone can build against.</p>
+      </article>
+    </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== CREDENTIALS ========== -->
+<section id="credentials" class="scene s-creds light pad">
+  <div class="wrap">
+    <div style="text-align:center;max-width:620px;margin:0 auto">
+      <p class="eyebrow">Credentials</p>
+    </div>
+    <div class="cred-grid">
+      <article class="cred">
+        <span class="lr"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 20 5v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <div class="n">Cyber Security</div>
+        <div class="sub">Google &middot; Cisco &middot; ISC2</div>
+      </article>
+      <article class="cred">
+        <span class="lr"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6.5 18A4.5 4.5 0 0 1 6 9a6 6 0 0 1 11.6-1.5A4 4 0 0 1 18 18z"/></svg></span>
+        <div class="n">Cloud</div>
+        <div class="sub">Platform and infrastructure</div>
+      </article>
+      <article class="cred">
+        <span class="lr"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.4v4M12 17.4v4M2.4 12h4M17.6 12h4M5.2 5.2l2.8 2.8M16 16l2.8 2.8M18.8 5.2 16 8M8 16l-2.8 2.8"/></svg></span>
+        <div class="n">AI and ML</div>
+        <div class="sub">Applied machine learning</div>
+      </article>
+      <article class="cred">
+        <span class="lr"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h10M4 18h13"/><circle cx="18.5" cy="12" r="1.6"/></svg></span>
+        <div class="n">Project Management</div>
+        <div class="sub">Agile delivery and risk</div>
+      </article>
+      <article class="cred">
+        <span class="lr"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 20c-1-6 1-11 5-14M21 20c1-6-1-11-5-14"/><path d="M12 7v13"/></svg></span>
+        <div class="n">Professional Qualifications</div>
+        <div class="sub">BSc (Hons) Cyber Security</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== QUOTE ========== -->
+<section class="scene s-quote light" style="padding-block:clamp(50px,6.4vw,84px)">
+  <div class="wrap inner">
+    <div class="mk">&ldquo;</div>
+    <blockquote>
+      The systems worth trusting are the ones designed to be doubted first. Everything
+      after that is maintenance.
+    </blockquote>
+    <div class="by">Thisuli Ekanayaka</div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact" class="scene s-contact pad">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h2>Let us Build Something that Holds</h2>
+      <p class="lede" style="margin-top:16px">
+        Open to security roles, development work, consulting and awareness sessions.
+        Email reaches me fastest.
+      </p>
+      <ul class="rows">
+        <li class="row">
+          <span class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span>
+          <span class="grow"><span class="lab">Email</span><span class="val" id="email">thisulinekanayake@gmail.com</span></span>
+          <button class="copy" id="copyBtn" type="button">Copy</button>
+        </li>
+        <li class="row">
+          <span class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.5 10.5V17M7.5 7.2v.1M12 17v-3.6c0-1.2.9-2.1 2-2.1s2 .9 2 2.1V17"/></svg></span>
+          <span class="grow"><span class="lab">LinkedIn</span><span class="val"><a href="https://www.linkedin.com/in/thisuli-ekanayake-7240692a" target="_blank" rel="noopener">View my LinkedIn profile</a></span></span>
+        </li>
+        <li class="row">
+          <span class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 19c-4 1.3-4-2.2-6-2.7m12 5.2v-3.6c0-1 .1-1.5-.5-2 2.8-.3 5.5-1.4 5.5-6.1a4.7 4.7 0 0 0-1.3-3.3 4.4 4.4 0 0 0-.1-3.3s-1.1-.3-3.6 1.3a12.3 12.3 0 0 0-6.5 0C5.9 2.8 4.8 3.1 4.8 3.1a4.4 4.4 0 0 0-.1 3.3A4.7 4.7 0 0 0 3.4 9.8c0 4.7 2.7 5.8 5.5 6.1-.4.4-.5.9-.5 1.6v4"/></svg></span>
+          <span class="grow"><span class="lab">GitHub</span><span class="val"><a href="https://github.com/thisulinekanayake-tn" target="_blank" rel="noopener">View my GitHub repositories</a></span></span>
+        </li>
+        <li class="row">
+          <span class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <span class="grow"><span class="lab">Location</span><span class="val">Sri Lanka, available remotely</span></span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="quoteframe">
+      <img src="assets/img-glass.webp" width="1500" height="938" loading="lazy" alt="">
+      <div class="in">
+        <div class="mk">&ldquo;</div>
+        <p>Now accepting projects worldwide.</p>
+        <div class="by">Thisuli Ekanayaka</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="footline"><span>Prevent. Detect. Respond.</span></div>
+<div class="colophon">© <span id="yr">2026</span> Thisuli Ekanayaka</div>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = window.matchMedia('(pointer: fine)').matches;
+  if (!reduce && fine) {
+    document.querySelectorAll('.tile, .svc, .cred, .idcard, .tfig').forEach(function (el) {
+      el.addEventListener('mousemove', function (e) {
+        var r = el.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - .5;
+        var py = (e.clientY - r.top) / r.height - .5;
+        el.style.transform = 'perspective(1000px) rotateY(' + (px * 6).toFixed(2) +
+          'deg) rotateX(' + (-py * 6).toFixed(2) + 'deg) translateY(-7px)';
+      });
+      el.addEventListener('mouseleave', function () { el.style.transform = ''; });
+    });
+  }
+
+  var btn = document.getElementById('copyBtn');
+  btn.addEventListener('click', function () {
+    var node = document.getElementById('email');
+    function select() {
+      var r = document.createRange();
+      r.selectNodeContents(node);
+      var s = window.getSelection();
+      s.removeAllRanges(); s.addRange(r);
+      btn.textContent = 'Select and copy';
+      setTimeout(function () { btn.textContent = 'Copy'; }, 2200);
+    }
+    function done() {
+      btn.textContent = 'Copied'; btn.dataset.done = '1';
+      setTimeout(function () { btn.textContent = 'Copy'; btn.dataset.done = ''; }, 1800);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(node.textContent.trim()).then(done).catch(select);
+    } else { select(); }
+  });
+</script>
